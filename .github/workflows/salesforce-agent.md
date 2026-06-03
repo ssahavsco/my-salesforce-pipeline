@@ -9,14 +9,15 @@ permissions:
 
 engine: copilot
 
-# This tells the agent what tools it has permission to use in the runner
 tools:
   bash:
     - sf *
     - git *
 
+# Use the secure engine-specific secrets block instead of env
 secrets:
   SF_SANDBOX_AUTH_URL: ${{ secrets.SF_SANDBOX_AUTH_URL }}
+  COPILOT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ---
 
 # Salesforce Deployment & Auto-Triage Agent
