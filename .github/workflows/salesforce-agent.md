@@ -4,19 +4,19 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
+  pull-requests: read
 
-# This connects the secret key you saved in Phase 2 to the environment
-env:
-  SF_SANDBOX_AUTH_URL: ${{ secrets.SF_SANDBOX_AUTH_URL }}
+engine: copilot
 
 # This tells the agent what tools it has permission to use in the runner
 tools:
-  run-command:
-    allowlist:
-      - sf *
-      - git *
+  bash:
+    - sf *
+    - git *
+
+secrets:
+  SF_SANDBOX_AUTH_URL: ${{ secrets.SF_SANDBOX_AUTH_URL }}
 ---
 
 # Salesforce Deployment & Auto-Triage Agent
