@@ -9,6 +9,10 @@ permissions:
 
 engine: copilot
 
+# Tell the runner to install the Salesforce CLI before the agent boots up
+steps:
+  - npm install -g @salesforce/cli
+
 tools:
   bash:
     - sf *
