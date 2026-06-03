@@ -1,0 +1,1 @@
+public class NF_TriggerException extends Exception {}
